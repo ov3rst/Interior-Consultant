@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #181719;
+  margin: 1rem 0.75rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav__menu {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-areas: "logo img";
+
+  --img1: scale(0);
+  --img2: scale(1);
+}
+
+.nav__menu:target {
+  --img1: scale(1);
+  --img2: scale(0);
+  --clip: inset(0 0 0 0);
+}
+
+.logo {
+  font-family: "Crimson Pro", serif;
+  text-transform: uppercase;
+  border: thin solid white;
+  padding: 0.6rem;
+  grid-area: logo;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.logo:hover {
+  background-color: white;
+  color: #181719;
+}
+
+.menu__btn {
+  grid-area: img;
+  position: relative;
+  z-index: 10;
+  justify-self: end;
+}
+
+.open__btn {
+  transform: var(--img2);
+}
+
+.close__btn {
+  transform: var(--img1);
+}
+
+.nav__menu-list {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+
+  background-color: #181719;
+  list-style: none;
+  clip-path: var(--clip, inset(0 0 0 100%));
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.nav__menu-link {
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 500;
+  padding-bottom: 0.3rem;
+  transition: border 0.1s ease-in-out;
+}
+
+.nav__menu-link.selected {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+.nav__menu-link:hover {
+  border-bottom: 2px solid white;
+}
