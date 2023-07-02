@@ -58,7 +58,7 @@ img {
 .menu__btn {
   grid-area: img;
   position: relative;
-  z-index: 10;
+  z-index: 20;
   justify-self: end;
 }
 
@@ -76,6 +76,7 @@ img {
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 10;
 
   display: flex;
   flex-direction: column;
@@ -90,7 +91,7 @@ img {
 }
 
 .nav__menu-link {
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: capitalize;
   font-weight: 500;
   padding-bottom: 0.3rem;
@@ -106,7 +107,7 @@ img {
   border-bottom: 2px solid white;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 75rem) {
   body {
     margin: 2.5rem 4.8125rem 0;
   }
@@ -127,17 +128,28 @@ img {
   }
 }
 
+@media (min-width: 90rem) {
+  body {
+    max-width: 90rem;
+    margin-inline: auto;
+  }
+}
+
 .interior__content {
+  --title-sz: 2.25rem;
+  --paragraph-sz: 0.875rem;
+
   margin-top: 2.375rem;
 }
 
 .interior__title {
   font-family: "Lora", serif;
-  font-size: 2.25rem;
+  font-size: var(--title-sz);
+  font-weight: 500;
 }
 
 .interior__description {
-  font-size: 0.875rem;
+  font-size: var(--paragraph-sz);
   margin-top: 1.5rem;
 }
 
@@ -151,7 +163,7 @@ img {
 }
 
 .interior__link svg {
-  width: 24px;
+  width: 1.5rem;
   height: auto;
   fill: white;
 }
@@ -163,9 +175,16 @@ img {
 
 .interior__card {
   position: absolute;
-  width: 300px;
-  height: 138px;
+  bottom: -5.25rem;
+  right: 0.7rem;
+
+  width: 18.75rem;
+  height: 8.625rem;
+
   background-color: #181719;
+
+  padding: 1rem;
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.3);
 }
 
 .interior__profile {
@@ -175,8 +194,8 @@ img {
 }
 
 .interior__profile-img {
-  width: 37px;
-  height: 37px;
+  width: 2.3125rem;
+  height: 2.3125rem;
   border-radius: 50%;
 }
 
@@ -186,12 +205,83 @@ img {
 }
 
 .interior__profile h2 {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .interior__profile span {
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: 500;
   color: #828282;
+}
+
+.interior__card p {
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-family: "Lora", sans-serif;
+  margin-top: 1.1rem;
+}
+
+@media (min-width: 75rem) {
+  main {
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 550px;
+  }
+
+  .interior__content {
+    --title-sz: 3rem;
+    --paragraph-sz: 1.5rem;
+  }
+
+  .interior__link {
+    font-size: 1.125rem;
+  }
+
+  .interior__card {
+    width: 25.625rem;
+    height: 11.8125rem;
+    padding: 1.65rem;
+    right: 1.9rem;
+    bottom: -6.9rem;
+  }
+
+  .interior__profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .interior__profile h2 {
+    font-size: 0.875rem;
+  }
+
+  .interior__profile span {
+    font-size: 0.75rem;
+  }
+
+  .interior__card p {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .interior__img {
+    width: 46.125rem;
+    height: 34.6875rem;
+  }
+}
+
+footer {
+  color: #a9a9a9;
+  font-size: 0.875rem;
+  position: absolute;
+  bottom: 1rem;
+  left: calc(50% - 255px / 2);
+}
+
+footer a {
+  text-decoration: underline;
 }
