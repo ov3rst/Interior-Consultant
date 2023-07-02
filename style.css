@@ -8,11 +8,21 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #181719;
   margin: 1rem 0.75rem 0;
+  color: white;
+}
+
+body:has(:target) {
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .nav__menu {
@@ -61,7 +71,7 @@ a {
 }
 
 .nav__menu-list {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -94,4 +104,94 @@ a {
 
 .nav__menu-link:hover {
   border-bottom: 2px solid white;
+}
+
+@media (min-width: 992px) {
+  body {
+    margin: 2.5rem 4.8125rem 0;
+  }
+
+  .menu__btn {
+    display: none;
+  }
+
+  .nav__menu {
+    display: flex;
+  }
+
+  .nav__menu-list {
+    position: static;
+    flex-direction: row;
+    column-gap: 5.375rem;
+    clip-path: none;
+  }
+}
+
+.interior__content {
+  margin-top: 2.375rem;
+}
+
+.interior__title {
+  font-family: "Lora", serif;
+  font-size: 2.25rem;
+}
+
+.interior__description {
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+.interior__link {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.interior__link svg {
+  width: 24px;
+  height: auto;
+  fill: white;
+}
+
+.interior__img-content {
+  position: relative;
+  margin-top: 2.3125rem;
+}
+
+.interior__card {
+  position: absolute;
+  width: 300px;
+  height: 138px;
+  background-color: #181719;
+}
+
+.interior__profile {
+  display: flex;
+  align-items: center;
+  column-gap: 0.875rem;
+}
+
+.interior__profile-img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+.interior__profile-description {
+  display: grid;
+  row-gap: 3px;
+}
+
+.interior__profile h2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.interior__profile span {
+  font-size: 10px;
+  font-weight: 500;
+  color: #828282;
 }

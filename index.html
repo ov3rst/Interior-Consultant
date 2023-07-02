@@ -1,58 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1,
-  maximum-scale=5" />
+    <link rel="icon" href="devchallenges.png" />
 
-  <link rel="icon" href="devchallenges.png" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" /> -->
 
-  <!-- <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500;700&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 
-  <link rel="stylesheet" href="style.css">
+    <title>Interior Consultan</title>
+  </head>
 
-  <title>Interior Consultan</title>
+  <body>
+    <header class="header">
+      <nav class="nav__menu" id="menu">
+        <a href="#" class="logo">this interior</a>
 
-</head>
+        <a href="#menu" class="open__btn menu__btn">
+          <img src="hamburger.svg" alt="" />
+        </a>
 
-<body>
+        <a href="#" class="close__btn menu__btn">
+          <img src="close.svg" alt="" />
+        </a>
 
-  <header class="header">
-    <nav class="nav__menu" id="menu">
-      <a href="#" class="logo">this interior</a>
+        <ul class="nav__menu-list">
+          <li class="nav__menu-item">
+            <a href="" class="nav__menu-link selected">home</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="#collection" class="nav__menu-link">collection</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="" class="nav__menu-link">about</a>
+          </li>
+          <li class="nav__menu-item">
+            <a href="" class="nav__menu-link">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-      <a href="#menu" class="open__btn menu__btn">
-        <img src="hamburger.svg" alt="">
-      </a>
-
-      <a href="#" class="close__btn menu__btn">
-        <img src="close.svg" alt="">
-      </a>
-
-      <ul class="nav__menu-list">
-        <li class="nav__menu-item">
-          <a href="" class="nav__menu-link selected">home</a>
-        </li>
-        <li class="nav__menu-item">
-          <a href="#collection" class="nav__menu-link">collection</a>
-        </li>
-        <li class="nav__menu-item">
-          <a href="" class="nav__menu-link">about</a>
-        </li>
-        <li class="nav__menu-item">
-          <a href="" class="nav__menu-link">contact</a>
-        </li>
-      </ul>
-
-    </nav>
-
-  </header>
-  <!-- <div class="welcome">
+    <main>
+      <div class="interior__content">
+        <h1 class="interior__title">Modern interior</h1>
+        <p class="interior__description">
+          A full-service residential & <br />
+          commercial interior desing and <br />
+          staging company offering <br />
+          professional organizing & <br />
+          eco-service.
+        </p>
+        <a href="#" class="interior__link">
+          Read more
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="48"
+            viewBox="0 -960 960 960"
+            width="48"
+          >
+            <path
+              d="m561-242-43-42 168-168H160v-60h526L517-681l43-42 241 241-240 240Z"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="interior__img-content">
+        <img src="photo1.png" alt="interior photo" class="interior__img" />
+        <div class="interior__card">
+          <div class="interior__profile">
+            <img
+              src="photo2.png"
+              alt="interior profile photo"
+              class="interior__profile-img"
+            />
+            <div class="interior__profile-description">
+              <h2>Aliza Webber</h2>
+              <span>Interior designer</span>
+            </div>
+          </div>
+          <p>Designed in 2020 by <br />Aliza Webber</p>
+        </div>
+      </div>
+    </main>
+    <!-- <div class="welcome">
     <div class="welcome-text">
       <h1>
         Welcome to
@@ -81,20 +123,19 @@
     </ul>
   </div> -->
 
-  <script>
-    const d = document,
-      $links = d.querySelectorAll(".nav__menu-link");
+    <script>
+      const d = document,
+        $links = d.querySelectorAll(".nav__menu-link");
 
-    d.addEventListener("click", e => {
-      if (e.target.matches(".nav__menu-link")) {
-        e.preventDefault();
-        $links.forEach(link => {
-          link.classList.remove("selected");
-        });
-        e.target.classList.add("selected");
-      }
-    });
-  </script>
-</body>
-
+      d.addEventListener("click", (e) => {
+        if (e.target.matches(".nav__menu-link")) {
+          e.preventDefault();
+          $links.forEach((link) => {
+            link.classList.remove("selected");
+          });
+          e.target.classList.add("selected");
+        }
+      });
+    </script>
+  </body>
 </html>
